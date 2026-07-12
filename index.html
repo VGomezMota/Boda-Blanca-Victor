@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Blanca & Víctor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+
+
+<style>
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #faedda;
+  color: #333;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 900px;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.75);
+}
+
+.hero-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-text h1 {
+   font-family: 'Great Vibes', cursive;
+  font-weight: 600;
+  font-size: 6rem;
+  letter-spacing: 0.05em;
+}
+
+.hero-text .fecha {
+ font-family: 'Allura', cursive;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+/* CONTENEDOR */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* BIENVENIDA */
+.bienvenida {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.bienvenida h2 {
+  font-family: 'Quattrocento', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.countdown {
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.countdown-labels {
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  letter-spacing: 0.2em;
+}
+
+/* FOTO GRANDE */
+.foto-grande img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 2rem 0;
+}
+
+/* TITULOS */
+.section-title {
+  font-family: 'Quattrocento', serif;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+/* PROGRAMA + INDICACIONES */
+.programa-indicaciones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 3rem 0;
+  align-items: stretch;
+}
+
+.programa-item {
+  margin-bottom: 1rem;
+}
+
+.programa-item strong {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.programa-item span {
+  color: #555;
+}
+
+/* MAPA */
+.mapa {
+  margin-top: 1rem;
+}
+
+.mapa img {
+  width: 100%;
+  height: 260px;        /* tamaño controlado, no 100% */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+/* BOTÓN CÓMO LLEGAR */
+.boton-como-llegar {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.6rem;
+  background: #e9d7d3;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.boton-como-llegar:hover {
+  background: #eac69a;
+}
+
+/* BOTONES GENERALES */
+.boton {
+  display: inline-block;
+  margin: 1rem 0;
+  padding: 0.8rem 1.6rem;
+  background: #e9d7d3;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.boton:hover {
+  background: #eac69a;
+}
+
+/* FOTO + FORMULARIOS */
+.foto-formularios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.col-izq img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+
+.col-der p {
+  text-align: justify;
+  text-justify: inter-word;   /* reparte mejor los espacios */
+  line-height: 1.35;          /* más compacto */
+}
+/* GALERÍA */
+.galeria {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+  background-image: url(Fondo2.png);   
+  background-size: cover;               /* cubre toda la sección */
+  background-position: center;          /* centrada */
+  background-repeat: no-repeat;         /* sin repetirse */
+  padding: 2rem;                        /* espacio para que se vea */
+  border-radius: 10px;                  /* opcional, bordes redondeados */
+}
+
+
+.galeria img {
+  width: 80%;
+  height: 450px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  display: block;
+}
+
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: #777;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+  .foto-formularios,
+  .programa-indicaciones {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .galeria {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    height: 360px;
+  }
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="Fondo1.png" alt="Imagen portada boda">
+  <div class="hero-text">
+    <h1>Blanca & Víctor</h1>
+    <div class="fecha">24 DE OCTUBRE DE 2026 · 12:00H</div>
+  </div>
+</section>
+
+<div class="container">
+
+  <!-- BIENVENIDA -->
+  <section class="bienvenida">
+    <h2>BIENVENIDOS A NUESTRA BODA</h2>
+    <div id="countdown" class="countdown">Cargando…</div>
+    <div class="countdown-labels">DÍAS · HORAS · MINUTOS · SEGUNDOS</div>
+  </section>
+
+  <!-- FOTO GRANDE -->
+  <section class="foto-grande">
+    <img src="foto1.png" alt="Foto pareja">
+  </section>
+
+  <!-- PROGRAMA + INDICACIONES + MAPA -->
+  <section class="programa-indicaciones">
+
+    <!-- IZQUIERDA -->
+    <div>
+      <h2 class="section-title">PROGRAMA</h2>
+
+      <div class="programa-item"><strong>11:00 — Salida de autobuses</strong><span>Plaza de Castilla y Calle Alcorisa 31 (Mercadillo Esperanza)</span></div>
+      <div class="programa-item"><strong>12:00 — Bienvenida</strong><span>Recibimos a los invitados</span></div>
+      <div class="programa-item"><strong>12:30 — Ceremonia</strong><span>¡Un momento para prometer amor eterno!</span></div>
+      <div class="programa-item"><strong>13:30 — Cóctel</strong><span>Para abrir boca</span></div>
+      <div class="programa-item"><strong>15:00 — Comida</strong><span>Para ponerse las botas</span></div>
+      <div class="programa-item"><strong>17:30 — Fiesta</strong><span>¡Que el ritmo no pare!</span></div>
+      <div class="programa-item"><strong>22:30 — Fin de fiesta</strong><span>¡Se acabó lo que se daba!</span></div>
+      <div class="programa-item"><strong>23:00 — Salida de autobuses</strong><span>¡Gracias por acompañarnos!</span></div>
+    </div>
+
+    <!-- DERECHA -->
+    <div>
+      <h2 class="section-title">INDICACIONES</h2>
+
+      <p><strong>Lugar de la ceremonia</strong><br>
+      Antigua Fábrica de Harinas<br>
+      Ctra. M-120, km 1.8, 28119 Torremocha de Jarama, Madrid</p>
+
+      <div class="mapa">
+        <img src="Mapa.png" alt="Mapa del lugar">
+      </div>
+
+      <a class="boton-como-llegar" 
+         href="https://www.google.com/maps/dir/?api=1&destination=Antigua+Fábrica+de+Harinas,+Torremocha+de+Jarama"
+         target="_blank">
+        CÓMO LLEGAR
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOTO + FORMULARIOS -->
+  <section class="foto-formularios">
+    <div class="col-izq">
+      <img src="foto5.png" alt="Foto besándonos">
+    </div>
+
+    <div class="col-der">
+
+      <h2 class="section-title">Confirma tu asistencia</h2>
+      <p>Nos encantará saber si podrás acompañarnos en nuestro día. Te pedimos que completes el formulario para confirmar tu asistencia, indicar si utilizarás el autobús y compartir cualquier intolerancia alimentaria que podamos tener en cuenta.</p>
+      <a class="boton" href="https://forms.cloud.microsoft/r/YmVdEm3ss9?origin=lprLink" target="_blank">ACCEDER AL FORMULARIO</a>
+
+      <h2 class="section-title">¡Comparte tus momentos favoritos con nosotros!</h2>
+      <p>Nos encantará que inmortalices los momentos más especiales de nuestra boda y los compartas con nosotros y el resto de invitados.</p>
+      <a class="boton" href="https://docs.google.com/forms/d/e/1FAIpQLSfBZxh4PyTlo267nfgJ3CwNn9mxERLb2fiF-b3PjyciD0aE2Q/viewform?usp=sharing&ouid=111081583558432075173" target="_blank">SUBE TUS FOTOS AQUÍ</a>
+
+      <h2 class="section-title">¿Tienes dudas?</h2>
+      <a class="boton" href="https://wa.link/ea5s9l" target="_blank">CONTACTA CON NOSOTROS</a>
+
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="galeria">
+    <img src="foto2.png" alt="">
+    <img src="foto3.png" alt="">
+    <img src="foto4.png" alt="">
+  </section>
+
+  
+
+</div>
+
+<footer>
+  <div class="footer-content">
+    <img src="Logo.png" alt="Logo boda" width="200" height="auto">
+  </div>
+</footer>
+
+
+<!-- COUNTDOWN SCRIPT -->
+<script>
+const weddingDate = new Date("2026-10-24T12:00:00").getTime();
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const diff = weddingDate - now;
+
+  if (diff <= 0) {
+    document.getElementById("countdown").innerHTML = "¡Es hoy!";
+    return;
+  }
+
+  const days = Math.floor(diff / (1000*60*60*24));
+  const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+  const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+  const seconds = Math.floor((diff % (1000*60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+    `${days} : ${hours} : ${minutes} : ${seconds}`;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+
+</body>
+</html>
+
+
